@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <h1 class="mb-4">Discover Events</h1>
+    <div class="row">
+        {{#each results}}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{#if images.[0]}}{{images.[0].url}}{{else}}./dance.jpg{{/if}}" class="card-img-top" alt="{{name}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">Date: {{dates.start.localDate}}</p>
+                    <p class="card-text">Time: {{dates.start.localTime}}</p>
+                    <a href="{{url}}" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    {{#if message}}
+    <div class="alert alert-warning mt-4">{{message}}</div>
+    {{/if}}
+</div>
